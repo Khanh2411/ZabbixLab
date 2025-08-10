@@ -78,4 +78,8 @@ B6: Truy cập vào Web ui bằng IP host zabbix server
   
 ## Cài đặt Zabbix Agent
 ## Thêm host và cấu hình giám sát
+Thêm host agent của Window server:  
+Thêm Switch layer 3:  
+Thêm Router:  
+
 ## Kiểm tra và xác thực giám sát
