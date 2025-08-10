@@ -18,7 +18,8 @@ Mô hình gồm một Zabbix Server (Linux) đặt ở VLAN10 và một Windows 
   
 ## Sơ đồ mạng
 #### Sơ đồ mạng
-
+![Zabbix Topology](images/SodomangZabbix.png)  
+  
 Giải thích vai trò từng thành phần  
 Router 3725:
 - Kết nối mạng nội bộ với mạng ngoài.
@@ -75,8 +76,9 @@ systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2  
 
 B6: Truy cập vào Web ui bằng IP host zabbix server  
-  
+![](images/DashboardZabbix.png)  
 ## Cài đặt Zabbix Agent
+
 ## Thêm host và cấu hình giám sát
 Thêm host agent của Window server:  
 Thêm Switch layer 3:  
