@@ -78,7 +78,15 @@ systemctl enable zabbix-server zabbix-agent apache2
 B6: Truy cập vào Web ui bằng IP host zabbix server  
 ![](images/DashboardZabbix.png)  
 ## Cài đặt Zabbix Agent
+Vào website Zabbix cài đặt Zabbix agent  
+![](images/insstallagent0.png)  
 
+Chọn nơi lưu trữ Zabbix agent  
+![](images/insstallagent1.png)  
+  
+Đặt IP theo Zabbix Server  
+![](images/insstallagent2.png)  
+  
 ## Thêm host và cấu hình giám sát
 Thêm host agent của Window server:  
 Thêm Switch layer 3:  
