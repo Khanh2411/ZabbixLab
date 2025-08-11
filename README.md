@@ -82,10 +82,10 @@ Vào website Zabbix cài đặt Zabbix agent
 ![](images/insstallagent0.png)  
 
 Chọn nơi lưu trữ Zabbix agent  
-![](images/insstallagent1.png)  
+![](images/installagent1.png)  
   
 Đặt IP theo Zabbix Server  
-![](images/insstallagent2.png)  
+![](images/installagent2.png)  
   
 ## Thêm host và cấu hình giám sát
 Thêm host agent của Window server:  
