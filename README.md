@@ -179,31 +179,31 @@ SNMPv2c với Max repetition count 10–20 giúp thu thập nhanh hơn nhiều s
 #### Kiểm tra kết nối giữa host và các thiết bị mạng
 Window server:  
 ![](images/PingWin.png)  
-
-
+  
+  
 Cisco Asav:  
 ![](images/PingAsav.png)  
-
-
+  
+  
 Switch:  
 ![](images/PingSwitch.png)  
-
-
+  
+  
 #### Kiểm tra Graph và Dashboard
 Window server:  
 Graph:  
 ![](images/![](images/WinGraph.png)  
-
+  
 Dashboard:  
 ![](images/![](images/WinDashboard.png)  
-
-
+  
+  
 Cisco Asav:  
 Graph:  
 ![](images/![](images/AsaGrap1.png)  
-
+  
 ![](images/![](images/AsaGrap2.png)  
-
+  
 Dashboard:  
 ![](images/![](images/AsaDashboard.png)  
   
@@ -214,3 +214,4 @@ Graph:
   
 Dashboard:  
 ![](images/![](images/SwitchDashboard.png)  
+  
