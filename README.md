@@ -120,20 +120,79 @@ systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2  
 
 B6: Truy cập vào Web ui bằng IP host zabbix server  
-![](images/)  
+![](images/DashboardZabbix.png)  
 ## Cài đặt Zabbix Agent
 Vào website Zabbix cài đặt Zabbix agent  
 ![](images/insstallagent0.png)  
 
 Chọn nơi lưu trữ Zabbix agent  
-![](images/installagent1.png)  
+![](images/setupagent1.png)  
   
 Đặt IP theo Zabbix Server  
-![](images/installagent2.png)  
+![](images/setupagent2.png)  
+
+Cài đặt Agent cho Window Server thành công  
+![](images/setupagent3.png)  
   
 ## Thêm host và cấu hình giám sát
 Thêm host agent của Window server:  
+![](images/WinConfig.png)  
+*Note: ảnh này đã thay Router 3725 thành Asav  
+Tại mục Template chọn Operating_Systems -> Chọn (Windows by Zabbix agent active / Windows by Zabbix agent)  
+Đặt IP của Window Server  
+  
 Thêm Switch layer 3:  
+![](images/SwitchConfig.png)  
+  
+Tại mục template chọn NetWork Device -> Chọn Cisco IOS by SNMP  
+Mục Add chọn SNMP version 2  
+Copy ${SNMP_COMMUNITY} ở SNMP Community, đi tới Macros paste ${SNMP_COMMUNITY} và chỗ value đặt là public  
+Đặt Max repetition count là 10-20  
+  
 Thêm Cisco Asav:  
+![](images/AsaConfig.png)  
+  
+Tại mục template chọn NetWork Device -> Chọn Cisco ASAv by SNMP  
+Mục Add chọn SNMP version 2  
+Copy ${SNMP_COMMUNITY} ở SNMP Community, đi tới Macros paste ${SNMP_COMMUNITY} và chỗ value đặt là public  
+Đặt Max repetition count là 10-20  
 
 ## Kiểm tra và xác thực giám sát
+#### Kiểm tra kết nối giữa host và các thiết bị mạng
+Window server:  
+![](images/PingWin.png)  
+
+
+Cisco Asav:  
+![](images/PingAsav.png)  
+
+
+Switch:  
+![](images/PingSwitch.png)  
+
+
+#### Kiểm tra Graph và Dashboard
+Window server:  
+Graph:  
+![](images/![](images/WinGraph.png)  
+
+Dashboard:  
+![](images/![](images/WinDashboard.png)  
+
+
+Cisco Asav:  
+Graph:  
+![](images/![](images/AsaGrap1.png)  
+
+![](images/![](images/AsaGrap2.png)  
+
+Dashboard:  
+![](images/![](images/AsaDashboard.png)  
+  
+  
+Switch:  
+Graph:  
+![](images/![](images/SwitchGraph.png)  
+  
+Dashboard:  
+![](images/![](images/SwitchDashboard.png)  
