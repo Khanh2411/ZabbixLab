@@ -192,26 +192,26 @@ Switch:
 #### Kiểm tra Graph và Dashboard
 Window server:  
 Graph:  
-![](images/![](images/WinGraph.png)  
+![](images/WinGraph.png)  
   
 Dashboard:  
-![](images/![](images/WinDashboard.png)  
+![](images/WinDashboard.png)  
   
   
 Cisco Asav:  
 Graph:  
-![](images/![](images/AsaGrap1.png)  
+![](images/AsaGrap1.png)  
   
-![](images/![](images/AsaGrap2.png)  
+![](images/AsaGrap2.png)  
   
 Dashboard:  
-![](images/![](images/AsaDashboard.png)  
+![](images/AsaDashboard.png)  
   
   
 Switch:  
 Graph:  
-![](images/![](images/SwitchGraph.png)  
+![](images/SwitchGraph.png)  
   
 Dashboard:  
-![](images/![](images/SwitchDashboard.png)  
+![](images/SwitchDashboard.png)  
   
