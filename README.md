@@ -20,28 +20,62 @@ Mô hình gồm một Zabbix Server (Linux) đặt ở VLAN10 và một Windows 
 #### Sơ đồ mạng
 ![Zabbix Topology](images/Sodomangzabbix.png)  
   
-Giải thích vai trò từng thành phần  
-Router 3725:
-- Kết nối mạng nội bộ với mạng ngoài.
-- IP fa0/0: 192.168.100.1
-- IP fa0/1: kết nối Internet
+Cấu hình Core Switch và Cisco Asav:  
+Switch Core:  
+! VLAN 10   
+vlan 10  
+ name VLAN10  
+!  
+interface vlan 10  
+ ip address 192.168.1.1 255.255.255.0  
+ no shutdown  
+!  
+! VLAN 20  
+vlan 20  
+ name VLAN20  
+!  
+interface vlan 20  
+ ip address 192.168.2.1 255.255.255.0  
+ no shutdown  
+!  
+!  
+interface e0/0
+ no switchport
+ ip address 192.168.100.2 255.255.255.0  
+ no shutdown  
+!  
+ip routing  
+ip route 0.0.0.0 0.0.0.0 192.168.100.1  
 
-SW-Core:  
-- Switch Layer 3, định tuyến giữa các VLAN.
-- VLAN10: 192.168.1.1 (Zabbix-SVR)
-- VLAN20: 192.168.2.1 (Winserver)
-- IP Layer 3 trên SW-Core kết nối uplink đến Router: 192.168.100.2
-
-SW:  
-- Switch Access, kết nối Zabbix-SVR với SW-Core qua VLAN10.
-
-Zabbix-SVR:  
-- IP: 192.168.1.10
-- Chạy Ubuntu Server, cài Zabbix Server + Frontend.
-
-Winserver:  
-- IP: 192.168.2.100
-- Chạy Windows Server, cài Zabbix Agent.  
+Cisco Asav:  
+! Inside interface  
+interface g0/0  
+ nameif inside  
+ security-level 100  
+ ip address 192.168.100.1 255.255.255.0  
+ no shutdown  
+! Outside interface  
+interface g0/1  
+ nameif outside  
+ security-level 0  
+ ip address dhcp setroute  
+ no shutdown  
+!  
+route inside 192.168.0.0 255.255.0.0 192.168.100.2  
+!  
+object network LAN  
+ subnet 192.168.0.0 255.255.0.0  
+ nat (inside,outside) dynamic interface  
+!  
+policy-map global_policy  
+ class inspection_default  
+  inspect icmp  
+  inspect icmp error  
+!  
+!  
+snmp-server community public  
+snmp-server host inside 192.168.1.10 community public  
+  
 ## Cài đặt cấu hình Zabbix Server
 Link cấu hình: https://www.zabbix.com/download?zabbix=7.4&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=mysql&ws=apache  
 B1: Chuyển sang quyền quản trị  
