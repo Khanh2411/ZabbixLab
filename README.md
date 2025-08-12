@@ -46,7 +46,9 @@ interface e0/0
 !  
 ip routing  
 ip route 0.0.0.0 0.0.0.0 192.168.100.1  
-
+!  
+snmp-server community public RO  
+  
 Cisco Asav:  
 ! Inside interface  
 interface g0/0  
