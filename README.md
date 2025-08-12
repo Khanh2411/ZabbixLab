@@ -156,7 +156,21 @@ Tại mục template chọn NetWork Device -> Chọn Cisco ASAv by SNMP
 Mục Add chọn SNMP version 2  
 Copy ${SNMP_COMMUNITY} ở SNMP Community, đi tới Macros paste ${SNMP_COMMUNITY} và chỗ value đặt là public  
 Đặt Max repetition count là 10-20  
-
+  
+  
+Vì sao phải copy ${SNMP_COMMUNITY} vào Macros và đặt giá trị là public?  
+Việc đặt giá trị trong Macros (Macros → {$SNMP_COMMUNITY} = public) giúp:  
+- Quản lý tập trung: Nếu community string thay đổi (ví dụ từ public sang monitor123), bạn chỉ cần sửa 1 chỗ trong macro, tất cả items sẽ update.  
+- Bảo mật: Không để lộ trực tiếp community string trong từng item hoặc template.  
+- Tái sử dụng: Dùng chung một template cho nhiều host, chỉ cần đổi giá trị macro trên từng host.  
+  
+Vì sao đặt Max repetition count là 10–20?  
+- Max repetition count là thông số của SNMP v2c/v3, quy định số lượng OID con mà Zabbix yêu cầu trong một lần truy vấn khi sử dụng GetBulkRequest.  
+Nếu giá trị này:  
+- Quá thấp (ví dụ 1–2) → Zabbix sẽ phải gửi nhiều request hơn → tăng tải mạng & chậm thu thập dữ liệu.  
+- Quá cao (ví dụ >50) → thiết bị SNMP có thể không trả kịp hoặc trả lỗi do gói tin quá lớn.  
+  
+SNMPv2c với Max repetition count 10–20 giúp thu thập nhanh hơn nhiều so với v1, giảm overhead mạng, và vẫn đảm bảo ổn định.  
 ## Kiểm tra và xác thực giám sát
 #### Kiểm tra kết nối giữa host và các thiết bị mạng
 Window server:  
