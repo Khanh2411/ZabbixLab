@@ -18,7 +18,7 @@ Mô hình gồm một Zabbix Server (Linux) đặt ở VLAN10 và một Windows 
   
 ## Sơ đồ mạng
 #### Sơ đồ mạng
-![Zabbix Topology](images/SodomangZabbix.png)  
+![Zabbix Topology](images/)  
   
 Giải thích vai trò từng thành phần  
 Router 3725:
@@ -76,7 +76,7 @@ systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2  
 
 B6: Truy cập vào Web ui bằng IP host zabbix server  
-![](images/DashboardZabbix.png)  
+![](images/)  
 ## Cài đặt Zabbix Agent
 Vào website Zabbix cài đặt Zabbix agent  
 ![](images/insstallagent0.png)  
@@ -90,6 +90,6 @@ Chọn nơi lưu trữ Zabbix agent
 ## Thêm host và cấu hình giám sát
 Thêm host agent của Window server:  
 Thêm Switch layer 3:  
-Thêm Router:  
+Thêm Cisco Asav:  
 
 ## Kiểm tra và xác thực giám sát
