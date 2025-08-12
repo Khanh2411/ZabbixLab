@@ -18,7 +18,7 @@ Mô hình gồm một Zabbix Server (Linux) đặt ở VLAN10 và một Windows 
   
 ## Sơ đồ mạng
 #### Sơ đồ mạng
-![Zabbix Topology](images/Sodomangzabbix)  
+![Zabbix Topology](images/Sodomangzabbix.png)  
   
 Giải thích vai trò từng thành phần  
 Router 3725:
