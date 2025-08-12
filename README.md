@@ -12,9 +12,11 @@ Yêu cầu phần mềm:
 - Zabbix: Zabbix Server 7.4, Zabbix Frontend, Zabbix Agent 2.  
 - Database: MariaDB hoặc MySQL.  
 - Phần mềm hỗ trợ: Apache/Nginx, PHP 7.4 trở lên.  
-
+  
 Mô tả chung:  
-Mô hình gồm một Zabbix Server (Linux) đặt ở VLAN10 và một Windows Server đặt ở VLAN20. Các VLAN được định tuyến thông qua Switch Layer 3 và Router. Zabbix Server cài đặt dịch vụ Zabbix và frontend để quản lý, trong khi Windows Server cài đặt Zabbix Agent để gửi dữ liệu giám sát.  
+Xây dựng lab Zabbix trên EVE-NG cho phép mô phỏng một hệ thống giám sát tập trung hoàn toàn trong môi trường ảo hóa, giúp tiết kiệm chi phí và linh hoạt trong thử nghiệm. Zabbix Server đóng vai trò thu thập và phân tích dữ liệu từ các máy chủ và thiết bị mạng, thông qua Zabbix Agent, SNMP hoặc ICMP.  
+  
+Trong lab, Zabbix Server thường được triển khai trên Ubuntu/Debian, kết nối với cơ sở dữ liệu MySQL/MariaDB và giao diện quản trị web. Các máy Linux/Windows cài đặt Zabbix Agent để gửi dữ liệu, còn router/switch được cấu hình SNMP để cung cấp thông tin trạng thái. EVE-NG cho phép tạo topology đa dạng, tách biệt mạng giám sát và mạng dịch vụ, cũng như kết nối Internet để thử nghiệm cảnh báo qua email hoặc Telegram.  
   
 ## Sơ đồ mạng
 #### Sơ đồ mạng
