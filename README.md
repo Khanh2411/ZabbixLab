@@ -44,6 +44,14 @@ interface e0/0
  ip address 192.168.100.2 255.255.255.0  
  no shutdown  
 !  
+interface e0/1  
+ switchport mode access  
+ switchport access vlan 10  
+!    
+interface e0/2  
+ switchport mode access  
+ switchport access vlan 20  
+!  
 ip routing  
 ip route 0.0.0.0 0.0.0.0 192.168.100.1  
 !  
