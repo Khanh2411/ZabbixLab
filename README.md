@@ -1,5 +1,7 @@
 # Zabbix Lab
 ## Giới thiệu dự án
+![](images/zabbix_logo.png)  
+  
 Mục tiêu:  
 - Triển khai hệ thống giám sát hạ tầng mạng bằng Zabbix.  
 - Giám sát trạng thái thiết bị mạng, máy chủ Windows/Linux.  
